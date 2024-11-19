@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج إدخال البيانات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f7f8fa;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        .container {
+            width: 70%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 2em;
+        }
+        label {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        input[type="date"] {
+            background-color: #fff;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-group .half-width {
+            flex: 1 1 48%;
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .form-group .half-width {
+                flex: 1 1 100%;
+            }
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>نموذج إدخال البيانات للناقلين</h2>
+        <form action="process.php" method="POST">
+            
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="carrier_number">رقم الناقل:</label>
+                    <input type="text" id="carrier_number" name="carrier_number" required>
+                </div>
+                <div class="half-width">
+                    <label for="unit_number">رقم الوحدة:</label>
+                    <input type="text" id="unit_number" name="unit_number" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="registry_number">رقم ولاية السجل:</label>
+                    <input type="text" id="registry_number" name="registry_number" required>
+                </div>
+                <div class="half-width">
+                    <label for="registry_state">ولاية السجل:</label>
+                    <input type="text" id="registry_state" name="registry_state" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="unit">الوحدة:</label>
+                    <input type="text" id="unit" name="unit" required>
+                </div>
+                <div class="half-width">
+                    <label for="carrier_name">الناقل:</label>
+                    <input type="text" id="carrier_name" name="carrier_name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="representative">الممثل:</label>
+                    <input type="text" id="representative" name="representative" required>
+                </div>
+                <div class="half-width">
+                    <label for="address">العنوان:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="truck_count">عدد الشاحنات:</label>
+                    <input type="number" id="truck_count" name="truck_count" required>
+                </div>
+                <div class="half-width">
+                    <label for="bank">البنك:</label>
+                    <input type="text" id="bank" name="bank" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="agency">الوكالة:</label>
+                    <input type="text" id="agency" name="agency" required>
+                </div>
+                <div class="half-width">
+                    <label for="bank_address">عنوان البنك:</label>
+                    <input type="text" id="bank_address" name="bank_address" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="bank_number">الرقم البنكي:</label>
+                    <input type="text" id="bank_number" name="bank_number" required>
+                </div>
+                <div class="half-width">
+                    <label for="rib_number">رقم الحساب RIB:</label>
+                    <input type="text" id="rib_number" name="rib_number" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="half-width">
+                    <label for="contract_date">تاريخ التعاقد:</label>
+                    <input type="date" id="contract_date" name="contract_date" required>
+                </div>
+                <div class="half-width">
+                    <label for="code_trans">Code_TRAN:</label>
+                    <input type="text" id="code_trans" name="code_trans" required>
+                </div>
+            </div>
+
+            <button type="submit">إرسال البيانات</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>حقوق الطبع والنشر © 2024 - جميع الحقوق محفوظة</p>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+CREATE DATABASE transportation_db;
+
+USE transportation_db;
+
+CREATE TABLE carriers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    carrier_number VARCHAR(50),
+    unit_number VARCHAR(50),
+    registry_number VARCHAR(50),
+    registry_state VARCHAR(100),
+    unit VARCHAR(100),
+    carrier_name VARCHAR(100),
+    representative VARCHAR(100),
+    address TEXT,
+    truck_count INT,
+    bank VARCHAR(100),
+    agency VARCHAR(100),
+    bank_address TEXT,
+    bank_number VARCHAR(50),
+    rib_number VARCHAR(50),
+    contract_date DATE,
+    code_trans VARCHAR(50)
+);
